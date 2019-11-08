@@ -1,0 +1,149 @@
+*{
+	margin:0;
+	padding: 0;
+}
+#main{
+	position: relative;
+	width: 100%;
+	}
+svg{
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	height: auto;
+	overflow: hidden;
+}
+.head{
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: auto;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.logo{
+	background: #FFF9F0;
+	border-radius: 100%;
+	position: relative;
+	z-index: 2;
+	left: 20px;
+	top: 10px;
+	width: 150px;
+	height: 150px;
+}
+.logo img{
+	width: 100%;
+	height: 100%;
+}
+
+.nav ul{
+	/*opacity: 0;*/
+	/*display: none;*/
+	transform: translateY(-100px);
+	margin-top: 20px;
+	width: 500px;	
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+}
+.nav ul a{
+	text-decoration: none;
+	color: white;
+	font-family: Arial;
+	padding: 10px;
+	border-radius: 50%;
+	border: 2px solid transparent;
+	transition: .5s ease;
+}
+.nav ul a:hover{
+	/*box-shadow: 0px 10px 10px  rgba(0,0,0,.2);*/
+	/*background: white;*/
+	/*color: black;*/
+	border-bottom:5px solid white;
+	/*border-left:2px solid black;
+	border-right:2px solid black;*/
+}	
+ .cls-1 {
+        fill: #ffae2c;
+    }
+
+.icon{
+	
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+}
+.menu.icon {
+	z-index: 1;
+  color: #000;
+  position: relative;
+  top: 50px;
+  right:50px;
+  margin-left: 2px;
+  margin-top: 10px;
+  width: 50px;
+  height: 20px;
+  border-top: 5px solid black;
+  /*background-color: currentColor;*/
+}
+
+.menu.icon:before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 40px;
+  height: 10px;
+  border-top: 5px solid black;
+  /*background-color: red;*/
+}
+
+.menu.icon:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 45px;
+  height: 5px;
+  background-color: currentColor;
+}
+
+.close.icon {
+	z-index: 1;
+	 top: 50px;
+  right:50px;
+  color: #000;
+  position: relative;
+  margin-top: 0;
+  margin-left: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.close.icon:before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 50px;
+  height: 5px;
+  background-color: currentColor;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.close.icon:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 50px;
+  height: 5px;
+  background-color: currentColor;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+
+.icon, .icon:before, .icon:after, .icon i, .icon i:before, .icon i:after { 
+  transition: all 0.4s ease;
+}
+

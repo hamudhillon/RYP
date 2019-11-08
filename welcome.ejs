@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<head>
+    <title>Wlecome</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script  src="jq.js"></script>
+    <link rel="stylesheet" href="style.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<script src="anime.min.js"></script>
+</head>
+<body>
+    
+        <!-- <select id="course">
+            <option value="ACC 409">ACC 409</option>
+            <option value="MGN 514">MGN 514</option>
+        </select>
+        <select id="dep">
+                <option value="MBA">MBA</option>
+        </select>
+        <input type="submit" class="send" name="sub"> -->
+    
+    
+    <div class="cmt">
+
+    </div>
+    <div id="main">
+            <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 1929.792 420.38">
+          <path id="Path_41" data-name="Path 41" class="cls-1" d='M0 263.38C0 263.38 447.212 81.04 924.677 81.04C1402.14 81.04 1929.79 263.38 1929.79 263.38V0H0V263.38Z' transform="translate(0 -4.271)"/>
+        </svg>
+        <div class="head">
+        
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <div class="nav">
+          <ul>
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">PROFESSORS</a></li>
+              <li><a href="#">FACTS</a></li>
+              <li><a href="#">ABOUT US</a></li>
+          </ul>
+        </svg>
+        
+        </div>
+        
+        <div class="menu icon"> </div>
+        </div>
+        
+        
+            <div class="back-section">
+                <div class="section section1">
+                    <button>Rate Your Professor</button>
+                </div>
+                <div class="section section2">
+                        <select class="department-options" id="course">
+                            <option >Select Department</option>
+                            <option value="ACC 409">ACC 409</option>
+                            <option value="MGN 514">MGN 514</option>
+                        </select>
+                        <select class="course-options" id="dep">
+                                <option >Select Course</option>
+                                <option value="MBA">MBA</option>
+                        </select>
+                        <input type="submit" class="send" name="sub">
+                        <ul class="pros" id="result">
+                        </ul>
+                </div>
+                <div class="section section3">
+                    <div class="back">Back</div>
+                        <div class="upper">
+                                <div class="u1">
+                                        <h2>Rounak Batham</h2>
+                                        <span class="course">Acc 408</span>
+                                </div>
+                                <div  class="u2">
+                                    <span>Rating <span class="rating">5</span><span class="s-rating">.0</span></span>
+                                </div>
+                                <div class="cmt">
+                                    <span class="cmt-heading">Best Comment</span>
+                                    <span class="cmt-name">Harman</span>
+                                    <hr>
+                                    <span class="cmt-msg">
+                                        Good Human With Best Teaching Skills
+                                    </span>
+                                </div>
+                        </div>
+        
+                        <form id="rate">
+                                <input type="hidden" id="tid" name="Tid">
+                                <input type="hidden" id="uid" name="Uid" value="<%=id%>">
+                                <input type="range" min="0" max="5" name="rating">
+                                <input type="range" min="0" max="5" name="tskills">
+                                <input type="range" min="0" max="5" name="tsuport">
+                                <label>Would you take this prof again?</label>
+                                <input type="radio" name="a">
+                                <input type="radio" name="a">
+                                <label>Good Exampler</label><input type="checkbox" name="tag" value="Good Exampler">
+                                <textarea name="cmt">
+                                </textarea>
+                               
+                            </form>
+                            <button  class="sendrating">Submit</button>
+                    </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            $(document).ready(function(){
+                const p1="M0 263.38C0 263.38 447.212 81.04 924.677 81.04C1402.14 81.04 1929.79 263.38 1929.79 263.38V0H0V263.38Z";
+                const p2="M0 263.38C0 263.38 439.792 380.212 917.257 380.212C1394.72 380.212 1929.79 263.38 1929.79 263.38V0H0V263.38Z";
+                let toggle=false;
+        
+                $('body').ready(function(){
+                    const timeline=anime.timeline({
+                        duration: 800,
+                        easing:'easeOutExpo'
+                    });
+        
+                    timeline.add({
+                        targets:'.logo',
+                        backgroundColor: ['rgba(0,0,0,0)','rgba(255,249,240,1)'],
+                        scale:['5','1'],
+                        translateX: ['10%','0'],
+                        translateY: ['10%','0']
+                    
+                    });
+                });
+                $('.icon').click(function(){
+                    const timeline=anime.timeline({
+                        duration: 1000
+                        // easing:'easeOutExpo'
+                    });
+        
+                    timeline.add({
+                        targets:'.cls-1',
+                        d:[
+                        {value:toggle ? p1:p2}
+                        ]
+                    }).add({
+                        targets:'.nav ul',
+                        translateY:toggle ? [100,-100] :[-100,100],
+                        opacity: toggle ? 0 : 1
+                    },'-=900');
+        
+                    
+                  $(this).toggleClass('close').toggleClass('menu');
+        
+                if (!toggle) {
+                    toggle=true;
+                }
+                else{
+                    toggle=false;
+                }
+                }); 
+                const timeline=anime.timeline({
+                        duration: 2000,
+                        easing:'easeOutExpo'
+                    });
+        
+                    timeline.add({
+                        targets:'.section1 button',
+                        scale:['4','1'],
+                    });
+                    $('.section.section1').show();
+                    $('.section.section2').hide();
+                    $('.section.section3').hide();
+                $('.section.section1 button').click(function(){
+                    const timeline=anime.timeline({
+                        duration: 1000,
+                        easing:'easeOutExpo'
+                    });
+                    timeline.add({
+                        targets:'.section1 button',
+                        translateY:[0,-100],
+                        
+                    })
+                    $('.section.section2').fadeToggle(200);
+                        $('.section.section1').slideUp(1000);
+                    });
+                $('.section.section2 #result').click(function(){
+                    const timeline=anime.timeline({
+                        duration: 2000,
+                        easing:'easeOutExpo'
+                    });
+        
+                    timeline.add({
+                        targets:'.section.section2',
+                        translateY:[0,-100],
+                    });
+                    
+                    $('.section.section2').fadeOut(500);
+                    $('.section.section3').delay(100).fadeIn(1500);
+                });
+                $('.section.section3 .back').click(function(){
+                    $('.section.section3').slideUp(1000);
+                    const timeline=anime.timeline({
+                        duration: 2000,
+                        easing:'easeOutExpo'
+                    });
+        
+                    timeline.add({
+                        targets:'.section1 button',
+                        translateY:[-100,0],
+        
+                    }).add({
+                        targets:'.section.section2',
+                        translateY:[-100,0],
+                    });
+                    $('.section.section1').slideDown(200);
+                    $('.section.section3').slideUp(1000);
+                });
+                $('.sendrating').click(function(){
+            console.log()
+            $.ajax({
+                url:'http://127.0.0.1:3000/InsertRating',
+                type:'POST',
+                data:$("#rate").serialize(),
+                success:function(data){
+                    console.log(data);
+                    $('.cmt').append(data['cmt']);
+                }
+            });
+        });
+        $('.send').click(function(){
+        var data={};
+       data.course=document.getElementById('course').value;
+        data.dep =document.getElementById('dep').value;
+        $.ajax({
+            url:"http://127.0.0.1:3000/tdata",
+            data:JSON.stringify(data),
+            type:"post",
+            contentType: 'application/json',
+            success:function(data){
+                console.log("success");
+                console.log(data[0]["_id"]);
+                // console.log(data.length);
+                for(i=0;i<data.length;i++){
+                   console.log();
+                //    <span>Rating <span class="rating">5</span>.<span class="s-rating">0</span></span>
+                    $('#result').append('<li id=tp tid='+data[i]["_id"]+'></span><h2>'+data[i]["name"]+'</h2><span class=course>'+data[i]["course"]+'</span><span>Rating<span class=rating>'+data[i]['rating']+'</span></span></li>')
+                };
+                // document.getElementById('result').innerHTML=;
+            }
+        });
+
+    });
+        $('#result').click(function(){
+            $('li').click(function(){
+                $('#tid').attr({'value':$(this).attr("tid")});
+            });
+        });
+            });
+        </script>
+</body>
+
+<script>
+    $(document).ready(function(){
+       
+        // $('#result').click(function(){
+        //     $(this).attr("tid");
+        //     // alert("tids");
+        //     //  
+        // });
+        
+    });
+    
+        // var vars = [], hash;
+        // var hashes = window.location.href.slice(window.location.href.indexOf('welcome/') + 8).split('http://127.0.0.1:3000/welcome/')
+        // for(var i = 0; i < hashes.length; i++)
+        // {
+        //     hash = hashes[i].split('=');
+        //     vars.push(hash[0]);
+        //     vars[hash[0]] = hash[1];
+        // }
+        // document.getElementById('uid').value=vars[0];
+        // console.log(vars[0]);
+        </script>
+</html>
